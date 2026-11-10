@@ -28,6 +28,10 @@ class _LoginScreenState extends State<LoginScreen> {
     }
   }
 
+  void _register() {
+    Navigator.pushReplacementNamed(context, AppRoutes.register);
+  }
+
   void _guest() {
     Navigator.pushReplacementNamed(context, AppRoutes.main);
   }
@@ -101,6 +105,17 @@ class _LoginScreenState extends State<LoginScreen> {
                   TextButton(
                     onPressed: _guest,
                     child: const Text('Continue as guest'),
+                  ),
+                  const SizedBox(height: 12),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Text("Don't have an account?"),
+                      TextButton(
+                        onPressed: _register,
+                        child: const Text('Register'),
+                      ),
+                    ],
                   ),
                 ],
               ),
